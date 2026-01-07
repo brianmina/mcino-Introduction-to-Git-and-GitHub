@@ -1,0 +1,110 @@
+theia@theia-brianmina17:/home/project$ git clone https://github.com/brianmina/r
+epository-name.git
+Cloning into 'repository-name'...
+Username for 'https://github.com': brianmina
+Password for 'https://brianmina@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/brianmina/repository-name.git/' not found
+theia@theia-brianmina17:/home/project$ ^C                                     
+theia@theia-brianmina17:/home/project$ git clone https://github.com/brianmina/mcino-Introduction-to-Git-and-GitHub.git
+Cloning into 'mcino-Introduction-to-Git-and-GitHub'...
+remote: Enumerating objects: 43, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 43 (delta 1), reused 0 (delta 0), pack-reused 41 (from 3)
+Receiving objects: 100% (43/43), 18.82 KiB | 18.82 MiB/s, done.
+Resolving deltas: 100% (11/11), done.
+theia@theia-brianmina17:/home/project$ ls
+mcino-Introduction-to-Git-and-GitHub
+theia@theia-brianmina17:/home/project$ git log
+fatal: not a git repository (or any parent up to mount point /home)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+theia@theia-brianmina17:/home/project$ cd mcino-Introduction-to-Git-and-GitHub/
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ ls
+CODE_OF_CONDUCT.md  LICENSE    compound_interest.py  simple-interest.sh
+CONTRIBUTING.md     README.md  forked-repo
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git log
+commit 789a5052a8f6f4f97cd40aa546736d6cdb7161f6 (HEAD -> main, origin/main, origin/HEAD)
+Author: brianmina <136344058+brianmina@users.noreply.github.com>
+Date:   Tue Jan 6 06:10:08 2026 -0500
+
+    Curl Command and its output
+
+commit ad95b0abe521c61effc692e83d5babd5fbf25910
+Author: ritikaj23 <128594913+ritikaj23@users.noreply.github.com>
+Date:   Thu Sep 4 15:32:47 2025 +0530
+
+    Create close_pr.yml
+    
+    Updated as per old repo
+
+commit 13af26282502789ba67b5038a822688b5b206644
+Author: ritikaj23 <128594913+ritikaj23@users.noreply.github.com>
+Date:   Thu Sep 4 15:31:21 2025 +0530
+
+    Create feature_request.md
+
+commit cd5f237d15a2b1fe4c7d95ff1da0b7db159625e5
+Author: ritikaj23 <128594913+ritikaj23@users.noreply.github.com>
+Date:   Thu Sep 4 15:30:31 2025 +0530
+
+    Create bug_report.md
+    
+    Updated as per the old repo
+
+commit cdeb3559cfc11717c7dd1ea59ba1378888784b54
+Author: ritikaj23 <128594913+ritikaj23@users.noreply.github.com>
+Date:   Thu Sep 4 15:28:39 2025 +0530
+
+[1]+  Stopped                 git log
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git checkout -b bug-fix-typo
+Switched to a new branch 'bug-fix-typo'
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git add .
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git commit -m "Fix typo in README.md"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'theia@theia-brianmina17.(none)')
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git config --global user.email brian.mina17@gmail.com
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git config --global user.name brianmina
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git commit -m "Fix typo in README.md"
+[bug-fix-typo 35cbaf3] Fix typo in README.md
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git push origin bug-fix-typo
+Username for 'https://github.com': brianmina
+Password for 'https://brianmina@github.com': 
+To https://github.com/brianmina/mcino-Introduction-to-Git-and-GitHub.git
+ ! [rejected]        bug-fix-typo -> bug-fix-typo (non-fast-forward)
+error: failed to push some refs to 'https://github.com/brianmina/mcino-Introduction-to-Git-and-GitHub.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git pull --rebase origin bug-fix-typo
+From https://github.com/brianmina/mcino-Introduction-to-Git-and-GitHub
+ * branch            bug-fix-typo -> FETCH_HEAD
+warning: skipped previously applied commit 789a505
+warning: skipped previously applied commit 35cbaf3
+hint: use --reapply-cherry-picks to include skipped commits
+hint: Disable this message with "git config advice.skippedCherryPicks false"
+Successfully rebased and updated refs/heads/bug-fix-typo.
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git push origin bug-fix-typo
+Username for 'https://github.com': brianmina
+Password for 'https://brianmina@github.com': 
+Everything up-to-date
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git merge bug-fix-typo
+Merge made by the 'ort' strategy.
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
