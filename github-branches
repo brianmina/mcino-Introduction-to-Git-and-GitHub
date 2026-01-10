@@ -1,0 +1,3 @@
+theia@theia-brianmina17:/home/project/mcino-Introduction-to-Git-and-GitHub$ git branch -vv
+* bug-fix-revert eafec3f Bug fix-revert
+  main           0b3a69b [origin/main] File merge_branches created
